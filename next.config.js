@@ -1,10 +1,7 @@
-/* eslint-disable import/no-anonymous-default-export */
-import { fontFamily } from 'tailwindcss/defaultTheme'
-import colors from 'tailwindcss/colors'
-import withContentlayer from 'next-contentlayer2'
+import { withContentlayer } from 'next-contentlayer2' // Correct named import
 import withBundleAnalyzer from '@next/bundle-analyzer'
+// import colors from 'tailwindcss/colors'
 
-// Content Security Policy definition
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is;
@@ -62,7 +59,7 @@ export default () => {
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
-      ignoreDuringBuilds: true, // Optional: Ignore ESLint during production builds
+      ignoreDuringBuilds: true,
     },
     images: {
       remotePatterns: [
@@ -82,7 +79,6 @@ export default () => {
       ]
     },
     webpack(config, options) {
-      // SVG handling with @svgr/webpack
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -92,7 +88,6 @@ export default () => {
     },
   }
 
-  // Apply plugins
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), config)
 }
