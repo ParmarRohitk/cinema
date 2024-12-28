@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-import { withContentlayer } from 'next-contentlayer2'
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+/* eslint-disable import/no-anonymous-default-export */
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
+import withContentlayer from 'next-contentlayer2'
+import withBundleAnalyzer from '@next/bundle-analyzer'
 
 // Content Security Policy definition
 const ContentSecurityPolicy = `
