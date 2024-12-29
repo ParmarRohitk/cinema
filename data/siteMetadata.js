@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Latest Movies | Watch New & Top-Rated Films Online',
   author: 'moviestremtv',
   headerTitle: 'moviestremtv',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'A blog created with moviestremtv',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://moviestremtv.com/',
